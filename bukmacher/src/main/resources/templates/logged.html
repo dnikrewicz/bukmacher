@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Dominik's Bet</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+</head>
+<body style="background-color:#111111;">
+
+  <nav>
+    <div class="heading">
+      <div class="test">
+        <a href="#" style="--clr:#FF6600"><span>Welcome <b>[[${#request.userPrincipal.principal.Login}]]!</b></span><i></i></a>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a th:href="@{/personCoupons}" style="--clr:#ff1867"><span>Your coupons</span><i></i></a></li>
+      <li>
+        <a th:action="@{/userPoints}" method="get" style="--clr:#6eff3e"><span><font color="white">
+          your points: <td th:text="${personPoints}"></td></font></span><i></i>
+        </a></li>
+      <li><form th:action="@{/logout}" method="post"><button type="submit" class="btn btn-warning">Logout</button></form></li>
+    </ul>
+  </nav>
+
+
+
+
+
+<div class="container text-center">
+
+
+
+  <div class="test">
+    <a href="#" style="--clr:#1e9bff"><span>Bet and WIN!</span><i></i></a>
+  </div>
+  <div style="width:400px; float: right;" class="essa">
+    <table class="table table-striped table-bordered table-dark">
+      <thead class="thead-dark">
+      <tr>
+        <th>Your Coupon</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="game: ${couponGames}">
+        <td th:text="${game.name}"></td>
+        <td th:text="${game.course}"></td>
+        <td th:text="${game.type}"></td>
+      </tr>
+      </tbody>
+    </table>
+    <form th:action="@{/counting_amount}" method="post" >
+      <div class="m-3">
+        <div class="form-group row">
+          <label class="col-4 col-form-label"><font color="white">Your amount</font></label>
+          <div class="col-8">
+            <input type="number" step="0.01" name="amount" class="form-control" />
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">Bet</button>
+        </div>
+      </div>
+    </form>
+
+
+
+
+
+  </div>
+
+  <div style="width:600px; float: left;">
+    <table class="table table-striped table-bordered table-dark">
+      <thead class="thead-dark">
+      <tr>
+        <th>Event</th>
+        <th>Course</th>
+        <th>Type</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="game: ${games}">
+        <td th:text="${game.name}"></td>
+        <td th:text="${game.course}"></td>
+        <td th:text="${game.type}"></td>
+        <td><a th:href="@{/bukmacherDominik/{id}(id=${game.id})}" class = "btn btn-primary">Add</a>
+            <a th:href="@{/bukmacherDominik/delete/{id}(id=${game.id})}" class = "btn btn-danger">Delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+      <tr>
+        <th>User ID</th>
+        <th>Login</th>
+        <th>Password</th>
+        <th>Points</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="person: ${persons}">
+        <td> sdfdsfsf<a th:href="@{/bukmacherDominik/{login}(login=${person.login})}" class = "btn btn-primary">sfsdfsdf</a></td>
+        <td th:text="${person.login}"></td>
+        <td th:text="${person.password}"></td>
+        <td th:text="${person.points}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

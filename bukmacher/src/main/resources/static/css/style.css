@@ -1,0 +1,317 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.body-text{
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #27282c;
+    font-family: "Montserrat" , sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.essa {
+    background-color: #27282c;
+}
+
+.nav-links li{
+    /*list-style: none;*/
+    display: inline-block;
+    margin-left: 40px;
+    padding-top: 23px;
+
+    position: relative;
+}
+
+
+.heading{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links a{
+    position: relative;
+    background: #fff;
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.5s
+}
+
+.nav-links a:hover{
+    background: var(--clr);
+    color: var(--clr);
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px var(--clr);
+}
+
+.nav-links a:before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #27282c;
+}
+
+.nav-links a span{
+    position: relative;
+    z-index: 1;
+}
+
+.nav-links a i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.nav-links a i::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.nav-links a:hover i::before{
+    width: 20px;
+    left: 20%;
+}
+
+.nav-links a i::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.nav-links a:hover i::after{
+    width: 20px;
+    left: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+.test{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 12vh;
+    font-family: "Montserrat" , sans-serif;
+}
+
+.test a{
+    position: relative;
+    background: #fff;
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.5s
+}
+
+.test a:hover{
+    background: var(--clr);
+    color: var(--clr);
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px var(--clr);
+}
+
+.test a:before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #27282c;
+}
+
+.test a span{
+    position: relative;
+    z-index: 1;
+}
+
+.test a i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.test a i::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.test a:hover i::before{
+    width: 20px;
+    left: 20%;
+}
+
+.test a i::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.test a:hover i::after{
+    width: 20px;
+    left: 80%;
+}
+
+
+
+
+
+
+
+
+
+.test1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 12vh;
+    font-family: "Montserrat" , sans-serif;
+}
+
+.test1 a{
+    position: relative;
+    background: #fff;
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    padding: 10px 30px;
+    transition: 0.5s
+    background: --clr;
+    color: --clr;
+    box-shadow: 0 0 35px --clr;
+
+}
+
+
+.test1 a span{
+    position: relative;
+    z-index: 1;
+}
+
+.test1 a i{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+
+.test1 a i::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 10px;
+    height: 4px;
+    background: #27282c;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.test1 a:hover i::after{
+    width: 20px;
+    left: 80%;
+}
+
+
+
+
+
+/*
+.nav-links a:hover{
+    color: #000;
+}
+
+.nav-links a::before{
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+.nav-links a:hover::before{
+    width: 100%;
+}
+*/
+/*
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 14px 16px;
+}
+
+.nav-links li a:hover:not(.active){
+    background-color: lightseagreen;
+}
+
+.nav-links li a.active{
+    background-color: #4caf50
+}*/

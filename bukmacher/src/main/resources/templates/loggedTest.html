@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>List Users</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+</head>
+<body>
+<div class="container text-center">
+    <div>
+        <form th:action="@{/logout}" method="post">
+            <p>
+                Welcome <b>[[${#request.userPrincipal.principal.Login}]]</b>
+            </p>
+            <input type="submit" value="Sign Out" />
+        </form>
+    </div>
+    <div>
+        <form th:action="@{/dodanie}" method="GET">
+
+            <input type="submit" value="Submit" />
+        </form>
+        <button data-id="49982"
+                data-color="black"
+                data-size="9"
+                data-product="Nike shoes"
+                onclick="addToCart(this);">
+            Add to Cart
+        </button>
+        <script>
+  let addToCart = button => {
+    let s = "Id = " + button.getAttribute('data-id') + "\r\n";
+    s += "Color = " + button.getAttribute('data-color') + "\r\n";
+    s += "Size = " + button.getAttribute('data-size') + "\r\n";
+    s += "Product = " + button.getAttribute('data-product');
+
+    alert(s);
+  }
+</script>
+    </div>
+    <div>
+        <h1>List of Users</h1>
+    </div>
+
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>User ID</th>
+                <th>Login</th>
+                <th>Password</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="coupon: ${coupons}">
+                <td th:text="${coupon.id}"></td>
+                <td th:text="${coupon.amount}"></td>
+                <td th:text="${coupon.total_course}"></td>
+                <td th:text="${coupon.id}"></td>
+                <td th:text="${coupon.winning_amount}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>User ID</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Points</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="person: ${persons}">
+                <td> <a th:href="@{/bukmacherDominik/{login}(login=${person.login})}" class = "btn btn-primary">sfsdfsdf</a></td>
+                <td th:text="${person.login}"></td>
+                <td th:text="${person.password}"></td>
+                <td th:text="${person.points}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

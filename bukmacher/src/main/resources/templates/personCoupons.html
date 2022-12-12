@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Coupons</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body style="background-color:#111111;">
+<nav>
+    <div class="heading">
+        <div class="test">
+            <a href="#" style="--clr:#FF6600"><span>Welcome <b>[[${#request.userPrincipal.principal.Login}]]!</b></span><i></i></a>
+        </div>
+    </div>
+    <ul class="nav-links">
+        <li><a th:href="@{/bukmacherDominik}" style="--clr:#ff1867"><span>Go bet</span><i></i></a></li>
+        <li>
+            <a th:action="@{/userPoints}" method="get" style="--clr:#6eff3e"><span><font color="white">
+          your points: <td th:text="${personPoints}"></td></font></span><i></i>
+            </a></li>
+        <li><form th:action="@{/logout}" method="post"><button type="submit" class="btn btn-warning">Logout</button></form></li>
+    </ul>
+</nav>
+
+
+
+
+
+<div class="container text-center">
+
+
+
+        <div style="width:600px; float: left;">
+            <div class="test">
+                <a href="#" style="--clr:#1e9bff"><span>Open Coupons</span><i></i></a>
+            </div>
+            <table class="table table-striped table-bordered table-dark">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Amount</th>
+                    <th>Course</th>
+                    <th>Winning amount</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="coupon: ${openCoupons}">
+                    <td th:text="${coupon.amount}"></td>
+                    <td th:text="${coupon.total_course}"></td>
+                    <td th:text="${coupon.winning_amount}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    <div style="width:600px; float: left;">
+        <div class="test">
+            <a href="#" style="--clr:#1e9bff"><span>Won Coupons</span><i></i></a>
+        </div>
+        <table class="table table-striped table-bordered table-dark">
+            <thead class="thead-dark">
+            <tr>
+                <th>Amount</th>
+                <th>Course</th>
+                <th>Winning amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="coupon: ${wonCoupons}">
+                <td th:text="${coupon.amount}"></td>
+                <td th:text="${coupon.total_course}"></td>
+                <td th:text="${coupon.winning_amount}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="width:600px; float: left;">
+        <div class="test">
+            <a href="#" style="--clr:#1e9bff"><span>Lost Coupons</span><i></i></a>
+        </div>
+        <table class="table table-striped table-bordered table-dark">
+            <thead class="thead-dark">
+            <tr>
+                <th>Amount</th>
+                <th>Course</th>
+                <th>Winning amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="coupon: ${lostCoupons}">
+                <td th:text="${coupon.amount}"></td>
+                <td th:text="${coupon.total_course}"></td>
+                <td th:text="${coupon.winning_amount}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>
+</body>
+</html>
